@@ -12,14 +12,14 @@ function Navigation() {
         <ol>
           <li>Playtron</li>
           <li>
-            Game Lunch
+            Game Launch
             <ol>
               <li>Response Example</li>
               <li>Response Example</li>
             </ol>
           </li>
           <li>
-            Game Lunch
+            Game Launch
             <ol>
               <li>Response Example</li>
               <li>Response Example</li>
@@ -28,7 +28,7 @@ function Navigation() {
             </ol>
           </li>
           <li>
-            Game Lunch
+            Game Launch
             <ol>
               <li>Response Example</li>
             </ol>
@@ -43,23 +43,27 @@ export default Navigation;
 
 const Nav = styled.nav`
   background-color: #001529;
-  width: 256px;
+  max-width: 400px;
   height: 100vh;
   color: white;
-
+  position: fixed;
+  
   h1 {
     font-size: 18px;
     padding-left: 20px;
+    padding-right: 40px;
   }
 
   ol {
     counter-reset: item;
     font-size: 16px;
     line-height: 32px;
+    cursor: pointer;
   }
 
   ol > li {
     counter-increment: item;
+    padding-right: 30px;
   }
 
   ol ol > li {
@@ -80,6 +84,6 @@ const Logo = styled.div`
   img {
     width: 156px;
     margin: 20px 0;
-    padding-left: 20px;
+    padding: 0 20px;
   }
 `;
