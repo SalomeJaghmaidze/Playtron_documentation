@@ -1,28 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
-function Bet() {
+function Cancel() {
   return (
-    <Container id="bet">
-      <Heading>2.2 /Bet</Heading>
+    <Container id="cancel">
+      <Heading>2.4 /Cancel</Heading>
       <Content>
         <Description>
           <p>
-            When player details are received and game client rendered then the
-            game provider should call bet to commit player bet wallet
-            transaction.
+            When there is need to revoke bet transaction then the game provider
+            should call <b>cancel</b>.
           </p>
           <p>Request example:</p>
         </Description>
         <Token>
-          {" "}
           <p>{"{"}</p>
           <p>
             "sessionToken" : <span>"valid-session-token"</span>, <br></br>
             "accountId" : <span> "Name"</span>, <br></br>
-            “productIT” : <span>Playtron-game-ID”</span>, <br></br>
-            "trId" : <span>"3949829374"</span>, <br></br>
-            "roundId" : <span>1000</span> <br></br>
+            "transactionId" : <span>"3949829374"</span>, <br></br>
+            "roundId" : <span>"Round-ID"</span>, <br></br>
+            "amount" : <span>1000</span> <br></br>
             "currency" : <span>"EUR"</span> <br></br>
           </p>
           <p>{"{"}</p>
@@ -53,15 +51,6 @@ function Bet() {
               </td>
             </tr>
             <tr>
-              <td>productId</td>
-              <td>Product identifier of the game on the game provider side</td>
-              <td>String (255)</td>
-              <td>
-                Product id where bet was placed (same as was passed during
-                product launch)
-              </td>
-            </tr>
-            <tr>
               <td>transactionId</td>
               <td>Game transaction id</td>
               <td>String (255)</td>
@@ -69,7 +58,7 @@ function Bet() {
             </tr>
             <tr>
               <td>roundId</td>
-              <td>Round id</td>
+              <td>round id</td>
               <td>String (255)</td>
               <td>Round id on game the provider’s side</td>
             </tr>
@@ -92,7 +81,7 @@ function Bet() {
           <p>{"{"}</p>
           <p>
             "status" : <span>“false”</span>, <br></br>
-            "balance" : <span>“9000”</span>, <br></br>
+            "balance" : <span> “9000”</span>, <br></br>
             “currency” : <span>“USD”</span>, <br></br>
           </p>
           <p>{"{"}</p>
@@ -135,7 +124,7 @@ function Bet() {
   );
 }
 
-export default Bet;
+export default Cancel;
 
 const Container = styled.div`
   padding: 20px 60px;
@@ -202,7 +191,7 @@ const Token = styled.div`
   width: 900px;
   margin: 20px 0;
   span {
-    color: #f2758b;
+    color: #F2758B;
   }
 `;
 

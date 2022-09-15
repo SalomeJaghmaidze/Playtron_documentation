@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function IntegrationProcess() {
   return (
-    <Container>
+    <Container id="integrationprocess">
       <Heading>1. Integration Process</Heading>
       <Content>
         <Description>
@@ -20,11 +20,10 @@ function IntegrationProcess() {
             identifier in the format described below.
           </p>
           <p>The template should be of the form:</p>
-          {/* <Url>
+          <Url>
             <p>
-            https://<game_provider_base_url>?<query_parameters>
-            </p>
-          </Url> */}
+            https://{'<'}game_provider_base_url{'>'}?{'<'}query_parameters{'>'}</p>
+          </Url>
           <p>Where:</p>
           <p>
             ❏ game_provider_base_url is a base URL where game launch controller

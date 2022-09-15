@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import styled from "styled-components";
 
 function Navigation() {
@@ -10,28 +11,98 @@ function Navigation() {
       <div>
         <h1>Table of contents</h1>
         <ol>
-          <li>Playtron</li>
           <li>
-            Game Launch
+            <Link
+              to="integrationprocess"
+              spy={true}
+              smooth={true}
+              offset={30}
+              duration={500}
+            >
+              Integration process
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="walletintegration"
+              spy={true}
+              smooth={true}
+              offset={30}
+              duration={500}
+            >
+              Wallet Integration
+            </Link>
             <ol>
-              <li>Response Example</li>
-              <li>Response Example</li>
+              <li>
+                <Link
+                  to="playerinfo"
+                  spy={true}
+                  smooth={true}
+                  offset={30}
+                  duration={500}
+                >
+                  Player info
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="bet"
+                  spy={true}
+                  smooth={true}
+                  offset={30}
+                  duration={500}
+                >
+                  Bet
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="win"
+                  spy={true}
+                  smooth={true}
+                  offset={30}
+                  duration={500}
+                >
+                  Win
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="cancel"
+                  spy={true}
+                  smooth={true}
+                  offset={30}
+                  duration={500}
+                >
+                  Cancel
+                </Link>
+              </li>
             </ol>
           </li>
           <li>
-            Game Launch
-            <ol>
-              <li>Response Example</li>
-              <li>Response Example</li>
-              <li>Response Example</li>
-              <li>Response Example</li>
-            </ol>
+            <Link
+              to="leaderboard"
+              spy={true}
+              smooth={true}
+              offset={30}
+              duration={500}
+            >
+              Leaderboard
+            </Link>
           </li>
           <li>
-            Game Launch
-            <ol>
-              <li>Response Example</li>
-            </ol>
+            <Link
+              to="deposit"
+              spy={true}
+              smooth={true}
+              offset={30}
+              duration={500}
+            >
+              Deposit of the Freespins
+            </Link>
           </li>
         </ol>
       </div>
@@ -47,7 +118,7 @@ const Nav = styled.nav`
   height: 100vh;
   color: white;
   position: fixed;
-  
+
   h1 {
     font-size: 18px;
     padding-left: 20px;

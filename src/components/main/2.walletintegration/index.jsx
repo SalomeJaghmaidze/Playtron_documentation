@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function Walletintegration() {
   return (
-    <Container>
+    <Container id='walletintegration'>
       <Heading>2. Wallet Integration</Heading>
       <Content>
         <p>Wallet endpoint URL should be provided by operator. The following Instant Games methods should be available:</p>
