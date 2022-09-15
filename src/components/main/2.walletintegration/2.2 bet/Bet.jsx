@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-function PlayerInfo() {
+function Bet() {
   return (
     <Container>
-      <Heading>2.1 /Player Info</Heading>
+      <Heading>2.2 /Bet</Heading>
       <Content>
         <Description>
           <p>
-            This method will be called to get player details (including balance)
-            by sessionToken passed to the game client.
+            When player details are received and game client rendered then the
+            game provider should call bet to commit player bet wallet
+            transaction.
           </p>
+          <p>Request example:</p>
         </Description>
         <Token>"sessionToken" "valid-session-token"</Token>
         <Table>
@@ -29,12 +31,53 @@ function PlayerInfo() {
               <td>String (255)</td>
               <td>Value passed upon game launch as a query parameter</td>
             </tr>
+            <tr>
+              <td>accountId</td>
+              <td>Player’s identifier</td>
+              <td>String (255)</td>
+              <td>
+                Unique player’s identifier (received from the platform on
+                /playerInfo call)
+              </td>
+            </tr>
+            <tr>
+              <td>productId</td>
+              <td>Product identifier of the game on the game provider side</td>
+              <td>String (255)</td>
+              <td>
+                Product id where bet was placed (same as was passed during
+                product launch)
+              </td>
+            </tr>
+            <tr>
+              <td>transactionId</td>
+              <td>Game transaction id</td>
+              <td>String (255)</td>
+              <td>Unique transaction id on game the provider’s side</td>
+            </tr>
+            <tr>
+              <td>roundId</td>
+              <td>Round id</td>
+              <td>String (255)</td>
+              <td>Round id on game the provider’s side</td>
+            </tr>
+            <tr>
+              <td>amount</td>
+              <td>Transaction amount to process</td>
+              <td>Long</td>
+              <td>Amount of transaction in currency’s minor units</td>
+            </tr>
+            <tr>
+              <td>currency</td>
+              <td>Currency of transaction</td>
+              <td>String (3)</td>
+              <td>Currency of transaction</td>
+            </tr>
           </tbody>
         </Table>
 
         <Token>"sessionToken" "valid-session-token"</Token>
         <Table>
-          <caption>Response from the operator should include:</caption>
           <thead>
             <tr>
               <th>Property Name</th>
@@ -45,37 +88,25 @@ function PlayerInfo() {
           </thead>
           <tbody>
             <tr>
-              <td>accountId</td>
-              <td>Unique player identifier</td>
+              <td>status</td>
+              <td>Status on ongoing transaction</td>
               <td>String (255)</td>
               <td>
-                Unique player’s identifier (received from the platform on
-                /playerInfo call)
+                It is generated according to the relevant situation. For
+                example, if the user does not have enough balance, etc.
               </td>
             </tr>
             <tr>
               <td>balance</td>
-              <td>Player’s balance</td>
+              <td>Player’s remaining balance</td>
               <td>Long</td>
-              <td>Balance in minor units. Mostly in cents</td>
+              <td>In minor units</td>
             </tr>
             <tr>
               <td>currency</td>
-              <td>Player’s currency</td>
+              <td>Currency of transaction</td>
               <td>String (3)</td>
-              <td>ISO-4217-3 format</td>
-            </tr>
-            <tr>
-              <td>country</td>
-              <td>Player’s country</td>
-              <td>String (2)</td>
-              <td>ISO-3166-1 alpha-2 format</td>
-            </tr>
-            <tr>
-              <td>userName</td>
-              <td>Player’s display name</td>
-              <td>String (255)</td>
-              <td>String format</td>
+              <td>Currency of transactions</td>
             </tr>
           </tbody>
         </Table>
@@ -84,7 +115,7 @@ function PlayerInfo() {
   );
 }
 
-export default PlayerInfo;
+export default Bet;
 
 const Container = styled.div`
   padding: 20px 60px;
@@ -102,6 +133,7 @@ const Container = styled.div`
 
 const Heading = styled.h2`
   margin-top: 20px;
+  margin-bottom: 40px;
   font-weight: 500;
   font-size: 32px;
   line-height: 22px;
@@ -144,17 +176,6 @@ const Table = styled.table`
   }
 `;
 
-const Url = styled.div`
-  padding: 10px;
-  background-color: #f6f7f9;
-  width: 900px;
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-`;
-
 const Token = styled.div`
   padding: 10px;
   background-color: #f6f7f9;
@@ -164,8 +185,4 @@ const Token = styled.div`
 
 const Content = styled.div`
   margin-left: 30px;
-`;
-
-const Requests = styled.div`
-  margin-left: 20px;
 `;
