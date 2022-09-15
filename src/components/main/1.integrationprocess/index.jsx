@@ -4,10 +4,6 @@ import styled from "styled-components";
 function IntegrationProcess() {
   return (
     <Container>
-      <Header>
-        <h1>Playtron</h1>
-        <p>Game integration technical document</p>
-      </Header>
       <Heading>1. Integration Process</Heading>
       <Content>
         <Description>
@@ -40,7 +36,7 @@ function IntegrationProcess() {
           </p>
         </Description>
 
-        <table>
+        <Table>
           <caption>Table 1. Query parameters supported</caption>
           <thead>
             <tr>
@@ -114,16 +110,17 @@ function IntegrationProcess() {
               <td>Player currency. Param is turned off by default</td>
             </tr>
           </tbody>
-        </table>
+        </Table>
 
         <div>
-          <p>
+        <p>
             <b>NOTE: </b>List of params described above is not changeable.
           </p>
-          <p>Example of final game launch URL:</p>
+        <p>Example of final game launch URL:</p>
           <Url>
             <a href="">
-              https://playtrongamesurl.com/launch?cid=parimatch&productId=horseRacing&sessionToken=QKxPbLysFwF45rc56q1A9T4WVag0YCDtpoUSXpqP9Sjv-RNv1P4N1TJCmgeFu4qK&lang=en&lobbyUrl=https%3A%2F%2Fm.casino.com%2Flobby&targetChannel=desktop&consumerId=provider-name&currency=USD
+              https://playtrongamesurl.com/launch?cid=parimatch&productId=horseRacing&sessionToken=QKxPbLysFwF45rc56q1A9T4WVag0YCDtpoUSXpqP9Sjv-RNv1P4N1TJCmgeFu4qK&lang=en&lobbyUrl=https%3A%2F%2Fm.casino.com%2Flobby&targetChannel=desktop&consumerId
+              =provider-name&currency=USD
             </a>
           </Url>
           <div>
@@ -149,16 +146,34 @@ function IntegrationProcess() {
 export default IntegrationProcess;
 
 const Container = styled.div`
-  padding: 45px;
+  padding: 20px 60px;
   margin-left: 250px;
-  border-bottom: 1px solid #F5F5F5;
+  overflow: hidden;
 
   table {
-    width: 928px;
-    Font size: 20px;
-    text-align: left;
-    border-spacing: 0;
   }
+
+  p {
+    font-size: 18px;
+    color: #444444;
+  }
+`;
+
+const Heading = styled.h2`
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 22px;
+  color: #230f6e;
+`;
+
+const Description = styled.div``;
+
+const Table = styled.table`
+  width: 928px;
+  Font size: 20px;
+  text-align: left;
+  border-spacing: 0;
 
   th {
     background-color: rgba(203, 212, 225, 0.5);
@@ -177,48 +192,21 @@ const Container = styled.div`
     padding: 5px 20px;
   }
 
-  p {
-    font-size: 18px;
-    color: #444444;
-  }
   caption {
     text-align: left;
     margin-bottom: 10px;
   }
 
-`;
-const Header = styled.div`
-  width: 1252px;
-  border-bottom: 1px solid rgba(0, 0, 0, 20%);
-
-  h1 {
-    font-size: 32px;
-    font-weight: 500;
-    color: #230f6e;
-    margin: 0;
-    weight: 500;
-  }
   p {
-    margin: 0;
-    margin-bottom: 15px;
-    font-size: 14px;
+    border: 1px solid red;
+    width: 100%;
   }
 `;
-
-const Heading = styled.h2`
-  margin-top: 50px;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 22px;
-  color: #230f6e;
-`;
-
-const Description = styled.div``;
 
 const Url = styled.div`
   padding: 10px;
   background-color: #f6f7f9;
-  width: 1000px;
+  width: 900px;
 
   a {
     text-decoration: none;
@@ -231,5 +219,5 @@ const Content = styled.div`
 `;
 
 const Requests = styled.div`
-margin-left: 20px;
-`
+  margin-left: 20px;
+`;
