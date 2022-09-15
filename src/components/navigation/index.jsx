@@ -8,104 +8,104 @@ function Navigation() {
       <Logo>
         <img src="images/Logo.png" alt="" />
       </Logo>
-      <div>
+      <Content>
         <h1>Table of contents</h1>
         <ol>
           <li>
-            <Link
+            <NavLink
               to="integrationprocess"
               spy={true}
               smooth={true}
               offset={30}
-              duration={500}
+              duration={100}
             >
               Integration process
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="walletintegration"
               spy={true}
               smooth={true}
               offset={30}
-              duration={500}
+              duration={100}
             >
               Wallet Integration
-            </Link>
+            </NavLink>
             <ol>
               <li>
-                <Link
+                <NavLink
                   to="playerinfo"
                   spy={true}
                   smooth={true}
                   offset={30}
-                  duration={500}
+                  duration={100}
                 >
                   Player info
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink
                   to="bet"
                   spy={true}
                   smooth={true}
                   offset={30}
-                  duration={500}
+                  duration={100}
                 >
                   Bet
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink
                   to="win"
                   spy={true}
                   smooth={true}
                   offset={30}
-                  duration={500}
+                  duration={100}
                 >
                   Win
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink
                   to="cancel"
                   spy={true}
                   smooth={true}
                   offset={30}
-                  duration={500}
+                  duration={100}
                 >
                   Cancel
-                </Link>
+                </NavLink>
               </li>
             </ol>
           </li>
           <li>
-            <Link
+            <NavLink
               to="leaderboard"
               spy={true}
               smooth={true}
               offset={30}
-              duration={500}
+              duration={100}
             >
               Leaderboard
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="deposit"
               spy={true}
               smooth={true}
               offset={30}
-              duration={500}
+              duration={100}
             >
               Deposit of the Freespins
-            </Link>
+            </NavLink>
           </li>
         </ol>
-      </div>
+      </Content>
     </Nav>
   );
 }
@@ -118,6 +118,8 @@ const Nav = styled.nav`
   height: 100vh;
   color: white;
   position: fixed;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 
   h1 {
     font-size: 18px;
@@ -150,6 +152,12 @@ const Nav = styled.nav`
   }
 `;
 
+export const Content = styled.div``;
+export const NavLink = styled(Link)`
+  &.active {
+    color: #1890ff;
+  }
+`;
 const Logo = styled.div`
   border-bottom: 1px solid rgba(203, 212, 225, 0.1);
   img {

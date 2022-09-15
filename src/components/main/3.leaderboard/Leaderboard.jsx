@@ -149,7 +149,8 @@ const Container = styled.div`
   padding: 20px 60px;
   margin-left: 250px;
   overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  
   table {
   }
 
@@ -213,6 +214,10 @@ const Token = styled.div`
   span {
     color: #f2758b;
   }
+
+  p {
+    margin: 0;
+  }
 `;
 
 const Content = styled.div`
@@ -227,5 +232,9 @@ const Url = styled.div`
   a {
     text-decoration: none;
     color: black;
+  }
+
+  p {
+    margin: 0;
   }
 `;

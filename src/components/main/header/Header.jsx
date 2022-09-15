@@ -16,7 +16,7 @@ const Headline = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 20%);
   padding:30px 10px 0 10px;
   margin-left: 300px;
-  width: 1252px;
+  font-family: 'Roboto', sans-serif;
 
   h1 {
     font-size: 32px;

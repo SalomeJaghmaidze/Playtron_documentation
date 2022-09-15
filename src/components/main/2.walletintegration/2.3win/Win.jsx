@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-function Cancel() {
+function Win() {
   return (
-    <Container id="cancel">
-      <Heading>2.4 /Cancel</Heading>
+    <Container id="win">
+      <Heading>2.3 /Win</Heading>
       <Content>
         <Description>
           <p>
-            When there is need to revoke bet transaction then the game provider
-            should call <b>cancel</b>.
+            When there is a game result then the game the provider should call
+            win to commit win wallet transaction.
           </p>
-          <p>Request example:</p>
+          <p>Request Example:</p>
         </Description>
         <Token>
           <p>{"{"}</p>
@@ -20,7 +20,7 @@ function Cancel() {
             "accountId" : <span> "Name"</span>, <br></br>
             "transactionId" : <span>"3949829374"</span>, <br></br>
             "roundId" : <span>"Round-ID"</span>, <br></br>
-            "amount" : <span>1000</span> <br></br>
+            "wonAmount" : <span>1000</span> <br></br>
             "currency" : <span>"EUR"</span> <br></br>
           </p>
           <p>{"{"}</p>
@@ -58,12 +58,12 @@ function Cancel() {
             </tr>
             <tr>
               <td>roundId</td>
-              <td>round id</td>
+              <td>Round id</td>
               <td>String (255)</td>
               <td>Round id on game the provider’s side</td>
             </tr>
             <tr>
-              <td>amount</td>
+              <td>wonAmount</td>
               <td>Transaction amount to process</td>
               <td>Long</td>
               <td>Amount of transaction in currency’s minor units</td>
@@ -76,61 +76,19 @@ function Cancel() {
             </tr>
           </tbody>
         </Table>
-
-        <Token>
-          <p>{"{"}</p>
-          <p>
-            "status" : <span>“false”</span>, <br></br>
-            "balance" : <span> “9000”</span>, <br></br>
-            “currency” : <span>“USD”</span>, <br></br>
-          </p>
-          <p>{"{"}</p>
-        </Token>
-        <Table>
-          <thead>
-            <tr>
-              <th>Property Name</th>
-              <th>Description</th>
-              <th>Type</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>status</td>
-              <td>Status on ongoing transaction</td>
-              <td>String (255)</td>
-              <td>
-                It is generated according to the relevant situation. For
-                example, if the user does not have enough balance, etc.
-              </td>
-            </tr>
-            <tr>
-              <td>balance</td>
-              <td>Player’s remaining balance</td>
-              <td>Long</td>
-              <td>In minor units</td>
-            </tr>
-            <tr>
-              <td>currency</td>
-              <td>Currency of transaction</td>
-              <td>String (3)</td>
-              <td>Currency of transactions</td>
-            </tr>
-          </tbody>
-        </Table>
       </Content>
     </Container>
   );
 }
 
-export default Cancel;
+export default Win;
 
 const Container = styled.div`
   padding: 20px 60px;
   margin-left: 250px;
   overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  
   table {
   }
 
@@ -190,8 +148,13 @@ const Token = styled.div`
   background-color: #f6f7f9;
   width: 900px;
   margin: 20px 0;
+
   span {
     color: #F2758B;
+  }
+
+  p {
+    margin: 0;
   }
 `;
 

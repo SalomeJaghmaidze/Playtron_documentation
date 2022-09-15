@@ -12,21 +12,27 @@ function Depositfreespins() {
             provided url by Playtron:
           </p>
           <Url>
-            <p>url: {'{'}game-provider-url{'}'}/api/freespins/Deposit</p>
+            <p>
+              url: {"{"}game-provider-url{"}"}/api/freespins/Deposit
+            </p>
           </Url>
           <p>Request example:</p>
         </Description>
         <Token>
           <p>{"{"}</p>
           <p>
-          "partnerName" : <span>"provider"</span>, <br></br>
-          "password" : <span> "*******"</span>, <br></br>
-          "accountId" : <span>"1234"</span>, <br></br>
-          "amount" : <span> “2”</span>, <br></br>
-          "currency" : <span>"whatever"</span><br></br>
-          ""quantity" : <span>“10”,</span><br></br>
-          "validfor" : <span>“7, //days”</span><br></br>
-          "transactionId" : <span>"unicid"</span><br></br>
+            "partnerName" : <span>"provider"</span>, <br></br>
+            "password" : <span> "*******"</span>, <br></br>
+            "accountId" : <span>"1234"</span>, <br></br>
+            "amount" : <span> “2”</span>, <br></br>
+            "currency" : <span>"whatever"</span>
+            <br></br>
+            ""quantity" : <span>“10”,</span>
+            <br></br>
+            "validfor" : <span>“7, //days”</span>
+            <br></br>
+            "transactionId" : <span>"unicid"</span>
+            <br></br>
           </p>
           <p>{"{"}</p>
           <p></p>
@@ -105,7 +111,8 @@ const Container = styled.div`
   padding: 20px 60px;
   margin-left: 250px;
   overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  
   table {
   }
 
@@ -169,6 +176,10 @@ const Token = styled.div`
   span {
     color: #f2758b;
   }
+
+  p {
+    margin: 0;
+  }
 `;
 
 const Content = styled.div`
@@ -183,5 +194,9 @@ const Url = styled.div`
   a {
     text-decoration: none;
     color: black;
+  }
+
+  p {
+    margin: 0;
   }
 `;

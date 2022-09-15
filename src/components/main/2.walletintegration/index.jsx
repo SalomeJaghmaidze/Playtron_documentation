@@ -24,7 +24,8 @@ const Container = styled.div`
   padding: 20px 60px;
   margin-left: 250px;
   overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  
   table {
   }
 

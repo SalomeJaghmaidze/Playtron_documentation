@@ -22,7 +22,9 @@ function IntegrationProcess() {
           <p>The template should be of the form:</p>
           <Url>
             <p>
-            https://{'<'}game_provider_base_url{'>'}?{'<'}query_parameters{'>'}</p>
+              https://{"<"}game_provider_base_url{">"}?{"<"}query_parameters
+              {">"}
+            </p>
           </Url>
           <p>Where:</p>
           <p>
@@ -112,10 +114,10 @@ function IntegrationProcess() {
         </Table>
 
         <div>
-        <p>
+          <p>
             <b>NOTE: </b>List of params described above is not changeable.
           </p>
-        <p>Example of final game launch URL:</p>
+          <p>Example of final game launch URL:</p>
           <Url>
             <a href="">
               https://playtrongamesurl.com/launch?cid=parimatch&productId=horseRacing&sessionToken=QKxPbLysFwF45rc56q1A9T4WVag0YCDtpoUSXpqP9Sjv-RNv1P4N1TJCmgeFu4qK&lang=en&lobbyUrl=https%3A%2F%2Fm.casino.com%2Flobby&targetChannel=desktop&consumerId
@@ -148,7 +150,8 @@ const Container = styled.div`
   padding: 20px 60px;
   margin-left: 250px;
   overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  
   table {
   }
 
@@ -206,6 +209,10 @@ const Url = styled.div`
   padding: 10px;
   background-color: #f6f7f9;
   width: 900px;
+
+  p {
+    margin: 0;
+  }
 
   a {
     text-decoration: none;

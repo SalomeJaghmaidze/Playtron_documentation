@@ -107,7 +107,8 @@ const Container = styled.div`
   padding: 20px 60px;
   margin-left: 250px;
   overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  
   table {
   }
 
@@ -170,6 +171,9 @@ const Token = styled.div`
   font-size: 18px;
   span {
     color: #f2758b;
+  }
+  p {
+    margin: 0;
   }
 `;
 
